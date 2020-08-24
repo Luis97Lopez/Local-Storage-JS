@@ -26,6 +26,19 @@ function getOrCreateTweets(){
      }
      return JSON.parse(localStorage.getItem('tweets'))
 }
+
+function cargaTweets(){
+     const string_tweets = getOrCreateTweets()
+     const my_tweets = document.getElementById('lista-tweets')
+
+     console.log(string_tweets)
+     
+     my_tweets.innerHTML = "";
+     string_tweets.forEach(function(value){
+          addTweetListItem(createTweetListItem(value))
+     });
+}
+
 function createTweetListItem(value){
 
      const element = document.createElement('li')
