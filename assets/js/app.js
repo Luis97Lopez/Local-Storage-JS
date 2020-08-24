@@ -51,16 +51,18 @@ function cargaTweets(){
 
 function createTweetListItem(value){
      const button = createDeleteTweetButton()
-
+     const text = document.createTextNode(value)
      const element = document.createElement('li')
+
      element.appendChild(button)
-     element.innerText = value
+     element.appendChild(text)
      return element
 }
 
 function createDeleteTweetButton()
 {
-     const button = document.createElement('button')
+     const button = document.createElement('a')
+
      button.setAttribute('class', 'borrar-tweet')
      button.innerText = 'X'
      return button
