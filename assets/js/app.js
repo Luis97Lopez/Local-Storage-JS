@@ -1,6 +1,11 @@
-const body = document.querySelector('body')
-body.addEventListener('click', showClick)
-localStorage.setItem('tweets', {})
+initializePage()
+
+function initializePage()
+{
+     const body = document.querySelector('body')
+     body.addEventListener('click', showClick)
+     cargaTweets()
+}
 
 function showClick(e){
      const target = e.target
