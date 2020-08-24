@@ -12,6 +12,10 @@ function showClick(e){
      if(target.type == 'submit'){
           addTweet()
      }
+     else if(target.className == 'borrar-tweet')
+     {
+          console.log(target.parentNode)
+     }
 }
 
 function addTweet(){
