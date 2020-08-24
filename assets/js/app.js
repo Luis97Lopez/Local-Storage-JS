@@ -77,3 +77,12 @@ function addTweetListItem(item)
      const my_tweets = document.getElementById('lista-tweets')
      my_tweets.insertBefore(item, my_tweets.firstChild)
 }
+function listItemsToArray(list_items)
+{
+     let array = []
+     for (var i = list_items.length-1; i >= 0 ; i--) {
+          let text = list_items[i].childNodes[1].nodeValue
+          array.push(text)
+     }
+     return array
+}
