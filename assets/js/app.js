@@ -18,7 +18,12 @@ function addTweet(){
      let text_area = document.getElementById('tweet')
      const tweet = text_area.value
      if(tweet.length > 0){
+          let tweets = getOrCreateTweets()
+          tweets.push(tweet)
+          localStorage.setItem('tweets',JSON.stringify(tweets))     
+          addTweetListItem(createTweetListItem(tweet))
 
+          text_area.value = ""
      }
      else{
           alert('No puedes mandar un Tweet vacío')
