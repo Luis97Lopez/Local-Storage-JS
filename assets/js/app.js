@@ -19,3 +19,8 @@ function addTweet(){
           alert('No puedes mandar un Tweet vacío')
      }
 }
+function addTweetListItem(item)
+{
+     const my_tweets = document.getElementById('lista-tweets')
+     my_tweets.insertBefore(item, my_tweets.firstChild)
+}
