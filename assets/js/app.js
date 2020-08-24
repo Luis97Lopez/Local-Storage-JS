@@ -19,6 +19,13 @@ function addTweet(){
           alert('No puedes mandar un Tweet vacío')
      }
 }
+
+function getOrCreateTweets(){
+     if(localStorage.getItem("tweets") === null){
+          localStorage.setItem("tweets", JSON.stringify([]))
+     }
+     return JSON.parse(localStorage.getItem('tweets'))
+}
 function createTweetListItem(value){
 
      const element = document.createElement('li')
