@@ -14,7 +14,7 @@ function showClick(e){
      }
      else if(target.className == 'borrar-tweet')
      {
-          console.log(target.parentNode)
+          deleteTweet(target.parentNode)
      }
 }
 
@@ -45,8 +45,6 @@ function cargaTweets(){
      const string_tweets = getOrCreateTweets()
      const my_tweets = document.getElementById('lista-tweets')
 
-     console.log(string_tweets)
-     
      my_tweets.innerHTML = "";
      string_tweets.forEach(function(value){
           addTweetListItem(createTweetListItem(value))
@@ -77,6 +75,16 @@ function addTweetListItem(item)
      const my_tweets = document.getElementById('lista-tweets')
      my_tweets.insertBefore(item, my_tweets.firstChild)
 }
+
+function deleteTweet(tweet)
+{
+     const my_tweets = document.getElementById('lista-tweets')
+     my_tweets.removeChild(tweet)
+
+     const tweets_in_array = listItemsToArray(my_tweets.getElementsByTagName('li'))
+     localStorage.setItem('tweets',JSON.stringify(tweets_in_array))   
+}
+
 function listItemsToArray(list_items)
 {
      let array = []
